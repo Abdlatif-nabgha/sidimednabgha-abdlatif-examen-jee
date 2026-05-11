@@ -9,6 +9,7 @@ import lombok.Setter;
 import lombok.extern.apachecommons.CommonsLog;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "contrats_assurance")
@@ -24,6 +25,7 @@ public class ContratAssurance {
     @Column(name = "date_souscription", nullable = false)
     private LocalDate dateSouscription;
 
+    @Column(name = "status")
     @Enumerated(EnumType.STRING)
     private ContratStatus status;
 
@@ -38,4 +40,11 @@ public class ContratAssurance {
 
     @Column(name = "taux_couverture")
     private double tauxCouverture;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
+
+    @OneToMany(mappedBy = "contratAssurance")
+    private List<Paiement> paiements;
 }

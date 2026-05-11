@@ -1,7 +1,6 @@
 package com.nabgha.sidiabdlatifexamenjee.entity;
 
-
-import com.nabgha.sidiabdlatifexamenjee.enums.TypeLogement;
+import com.nabgha.sidiabdlatifexamenjee.enums.NiveauConverture;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
@@ -13,17 +12,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@DiscriminatorValue("habitation")
+@DiscriminatorValue("sante")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
-public class ContratHabitation extends ContratAssurance {
+public class ContratSante extends ContratAssurance {
 
-    @Column(name = "type_logement")
+    @Column(name = "converture")
     @Enumerated(EnumType.STRING)
-    private TypeLogement typeLogement;
+    private NiveauConverture converture;
 
-    @Column(name = "addresse")
-    private String addresse;
-
-    @Column(name = "superficie")
-    private String superficie;
+    @Column(name = "nombre_personne")
+    private int nombrePersonne;
 }
