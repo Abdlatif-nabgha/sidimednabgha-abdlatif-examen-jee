@@ -1,6 +1,16 @@
 package com.nabgha.sidiabdlatifexamenjee.entity;
 
-/**
- @auther abdlatif-nabgha
-**/public class Client {
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "clients")
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+public class Client {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nom;
+    private String email;
 }

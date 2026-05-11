@@ -1,6 +1,8 @@
 package com.nabgha.sidiabdlatifexamenjee.enums;
 
-/**
- @auther abdlatif-nabgha
-**/public enum ContratStatus {
+
+public enum ContratStatus {
+    ENCOURS,
+    VALIDE,
+    RESILIE
 }
