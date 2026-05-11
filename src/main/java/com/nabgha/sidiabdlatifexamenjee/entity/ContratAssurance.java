@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.extern.apachecommons.CommonsLog;
 
 import java.time.LocalDate;
 
@@ -19,10 +20,22 @@ public class ContratAssurance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "date_souscription", nullable = false)
     private LocalDate dateSouscription;
+
+    @Enumerated(EnumType.STRING)
     private ContratStatus status;
+
+    @Column(name = "date_validation")
     private LocalDate dateValidation;
+
+    @Column(name = "montant_cotisation", nullable = false)
     private double montantCotisation;
+
+    @Column(name = "duree_contrat", nullable = false)
     private int dureeContrat;
+
+    @Column(name = "taux_couverture")
     private double tauxCouverture;
 }
