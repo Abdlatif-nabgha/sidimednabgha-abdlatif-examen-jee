@@ -44,7 +44,4 @@ public class ContratAssurance {
     @ManyToOne
     @JoinColumn(name = "client_id")
     private Client client;
-
-    @OneToMany(mappedBy = "contratAssurance")
-    private List<Paiement> paiements;
 }
