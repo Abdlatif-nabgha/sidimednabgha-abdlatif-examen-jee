@@ -86,8 +86,6 @@ public class ContratServiceImpl implements ContratService {
 
     @Override
     public List<ContratAssurance> getContratsByClient(Long clientId) {
-        // This would typically return base entities or a generic DTO list
-        // For simplicity in this exam context, we return the base entities or could map to a generic DTO
         return contratRepository.findAll().stream()
                 .filter(c -> c.getClient() != null && c.getClient().getId().equals(clientId))
                 .toList();
